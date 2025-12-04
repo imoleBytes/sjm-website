@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  background-color: #0f2954;
+  padding: 100px;
+}
+h1 {
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+p {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 45px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.dollar {
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+}
+.dollar button {
+  padding: 7px;
+  color: white;
+  background-color: #0f2954;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.dollar button:hover {
+  background-color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+@media (max-width: 450px) {
+  .dollar {
+    display: block;
+    gap: 20px;
+  }
+}

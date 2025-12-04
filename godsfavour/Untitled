@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.gaf{
+    /* margin: 80px; */
+    padding: 80px;
+    background-color: rgb(2, 2, 29);
+    color: white;
+     position: relative;
+     bottom: 10px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+     padding-left: 50px;
+}
+.car1{
+   margin-bottom: 20px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.coin{
+    display: flex;
+    gap: 40px;
+}
+/* .flexparent2{
+
+} */
+.flexparent2 img{
+    height: 250px;
+    width: 300px;
+    border-radius: 6px;
+}
+/* .pop{
+    display: flex;
+    justify-content: start;
+    width: 20px;
+} */    
+/* .pop{
+    width: 100px;
+} */
+
