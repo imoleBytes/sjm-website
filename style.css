@@ -11,6 +11,14 @@
   scroll-behavior: smooth;
   font-size: 16px;
 }
+
+h1 {
+  background-image: linear-gradient(to right, yellow, green, white, red);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: transparent; */
+}
+
 header {
   /* height: 100%; */
   width: 100vw;
@@ -701,7 +709,7 @@ h1 {
   .card {
     margin-top: 30px;
     width: 48%;
-    height: 280px;
+    /* height: 280px; */
   }
 }
 /* PRAISE STYLES ends HERE */

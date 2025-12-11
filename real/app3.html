@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SJM UNIQUE TECH Premium Printing & TECH Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0f1423;
+        color: #e5e7eb;
+        overflow-x: hidden;
+        border: solid 2px red;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        letter-spacing: -0.01em;
+        font-weight: 700;
+      }
+
+      /* Navigation */
+      nav {
+        background: rgba(15, 20, 35, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-link {
+        color: #d1d5db;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #3b82f6;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #3b82f6;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0f1423 0%, #1a1f3a 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -5%;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -20%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite reverse;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+
+      .hero h1 {
+        font-size: 3.8rem;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #b0b8cc;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 550px;
+      }
+
+      /* Button Styles */
+      .btn {
+        padding: 14px 36px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        display: inline-block;
+        letter-spacing: 0.03em;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: white;
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #3b82f6;
+        border: 2px solid #3b82f6;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: #60a5fa;
+        color: #60a5fa;
+      }
+
+      /* Feature Cards */
+      .feature-card {
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        position: relative;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        border-color: #3b82f6;
+        background: rgba(30, 41, 59, 0.8);
+        box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .feature-card p {
+        color: #b0b8cc;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      /* Course Cards */
+      .course-card {
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .course-card:hover {
+        transform: translateY(-12px);
+        border-color: #3b82f6;
+        background: rgba(30, 41, 59, 0.8);
+        box-shadow: 0 25px 60px rgba(59, 130, 246, 0.25);
+      }
+
+      .course-image {
+        height: 300px;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+      }
+
+      .course-image::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 30%,
+          rgba(59, 130, 246, 0.1) 50%,
+          transparent 70%
+        );
+      }
+
+      .course-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .course-content h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .course-content p {
+        color: #b0b8cc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .course-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+      }
+
+      .course-duration {
+        color: #60a5fa;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .course-level {
+        color: #b0b8cc;
+        font-size: 0.85rem;
+      }
+
+      /* Section Spacing */
+      section {
+        padding: 80px 0;
+        /* width: fit-content; */
+        margin: auto;
+      }
+
+      .section-title {
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: #b0b8cc;
+        font-size: 1.05rem;
+        margin-bottom: 4rem;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      /* Stats Section */
+      .stat-block {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #3b82f6;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: #b0b8cc;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+        color: white;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Footer */
+      footer {
+        background: #0a0f1a;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 60px 0 30px;
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+      }
+
+      footer h4 {
+        color: white;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      footer a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      footer a:hover {
+        color: #3b82f6;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+        }
+
+        .cta-section h2 {
+          font-size: 2rem;
+        }
+
+        section {
+          padding: 50px 0;
+        }
+      }
+
+      /* Gallery Styles */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        aspect-ratio: 1;
+        cursor: pointer;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        transition: all 0.4s ease;
+        background: rgba(30, 41, 59, 0.6);
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        border-color: #3b82f6;
+        box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+      }
+
+      .gallery-item img,
+      .gallery-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img,
+      .gallery-item:hover video {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-label {
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .gallery-category {
+        color: #60a5fa;
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .gallery-tabs {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .tab-btn {
+        padding: 10px 24px;
+        border-radius: 8px;
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        color: #d1d5db;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn:hover,
+      .tab-btn.active {
+        background: #3b82f6;
+        color: white;
+        border-color: #3b82f6;
+      }
+
+      .gallery-category-content {
+        display: none;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .gallery-category-content.active {
+        display: grid;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <!-- <div
+            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center rounded-lg"
+          >
+            <span class="text-white font-bold text-lg">SJM</span>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-white"
+            >UNIQUE TECH.</span
+          > -->
+          <img class="w-56 rounded-lg" src="SJM OMG.svg" alt="" srcset="" />
+        </div>
+        <div class="hidden md:flex items-center gap-10">
+          <a href="/" class="nav-link">Home</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#courses" class="nav-link">Courses</a>
+          <a href="#about" class="nav-link">About</a>
+          <a
+            target="_blank"
+            href="https://wa.me/08157266351/?text=from%20the website: "
+            class="nav-link"
+            >Contact</a
+          >
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+        </div>
+        <a
+          target="_blank"
+          href="https://wa.me/08157266351/?text=from%20the website: "
+        >
+          <button class="btn btn-primary text-sm">Get Started</button></a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="max-w-7xl mx-auto px-6 hero-content">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h1>Elevate Your Print & Master Design</h1>
+            <p>
+              Premium printing solutions paired with immersive design courses.
+              Transform your vision into stunning visual experiences with
+              cutting-edge technology and expert guidance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                target="_blank"
+                href="https://wa.me/08157266351/?text=from%20the website: "
+              >
+                <button class="btn btn-primary">Request Quote</button></a
+              >
+              <a
+                target="_blank"
+                href="https://wa.me/09018005785/?text=from%20the website: "
+                ><button class="btn btn-secondary">Explore Courses</button></a
+              >
+            </div>
+          </div>
+          <div class="relative h-96 flex items-center justify-center">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/10 rounded-3xl blur-3xl"
+            ></div>
+            <div class="relative">
+              <!-- <svg
+                class="w-56 h-56 text-blue-400 opacity-50"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.5"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg> -->
+              <img
+                src="https://rollupbanners.ng/wp-content/uploads/al_opt_content/IMAGE/rollupbanners.ng/wp-content/uploads/large_format_printer.webp.bv_resized_desktop.webp.bv.webp?bv_host=rollupbanners.ng"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      style="background: linear-gradient(to bottom, #0f1423, #1a1f3a)"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Complete solutions for printing, tech training, installations, and
+          online registrations. Everything your business needs in one platform.
+        </p>
+
+        <!-- Added subsection for Printing Services -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">
+            Premium Printing Solutions
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">📇</div>
+              <h3>Business Collateral</h3>
+              <p>
+                Premium business cards, letterheads, and branded materials that
+                leave lasting impressions with meticulous attention to detail.
+              </p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.1s">
+              <div class="feature-icon">📚</div>
+              <h3>Marketing Materials</h3>
+              <p>
+                Custom brochures, portfolios, and promotional pieces designed to
+                captivate your audience and elevate your brand presence.
+              </p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.2s">
+              <div class="feature-icon">🖼️</div>
+              <h3>Large Format Prints</h3>
+              <p>
+                Oversized banners, posters, and signage that command attention.
+                Perfect for events, exhibitions, and installations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Added Installation Services subsection -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">
+            Installation & Training Services
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="feature-card fade-in">
+              <div class="feature-icon">📷</div>
+              <h3>Camera Installation & Training</h3>
+              <p>
+                Professional security and surveillance camera installation with
+                comprehensive training. Includes system setup, maintenance
+                guidance, and 24/7 support.
+              </p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.1s">
+              <div class="feature-icon">☀️</div>
+              <h3>Solar Installation & Training</h3>
+              <p>
+                Expert solar panel installation for residential and commercial
+                properties. Complete training on system operation, maintenance,
+                and optimization for maximum efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="background: #0a0f1a">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12">
+          <div class="stat-block">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Students Trained</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section
+      id="courses"
+      style="background: linear-gradient(to bottom, #1a1f3a, #0f1423)"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Educational Programs</h2>
+        <p class="section-subtitle">
+          Level up your skills with our comprehensive courses in design,
+          technology, and practical installations.
+        </p>
+
+        <!-- Added Tech Courses subsection -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">
+            Technology Courses
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="course-card fade-in">
+              <div class="course-image">💻</div>
+              <div class="course-content">
+                <h3>Frontend Web Development</h3>
+                <p>
+                  Master HTML, CSS, JavaScript, and modern frameworks like
+                  React. Build responsive, interactive websites from concept to
+                  deployment.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">12 weeks</span>
+                  <span class="course-level">Beginner-Advanced</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-card fade-in" style="animation-delay: 0.1s">
+              <div class="course-image">🐍</div>
+              <div class="course-content">
+                <h3>Python Essentials</h3>
+                <p>
+                  Learn Python fundamentals, data structures, and practical
+                  programming skills. Perfect foundation for automation, data
+                  analysis, and backend development.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">10 weeks</span>
+                  <span class="course-level">Beginner</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-card fade-in" style="animation-delay: 0.2s">
+              <div class="course-image">🗄️</div>
+              <div class="course-content">
+                <h3>SQL Essentials</h3>
+                <p>
+                  Master database querying, data manipulation, and management.
+                  Essential skills for working with data-driven applications and
+                  analytics.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">8 weeks</span>
+                  <span class="course-level">Beginner-Intermediate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Added Design Courses subsection -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">
+            Design & Print Courses
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="course-card fade-in">
+              <div class="course-image">🎨</div>
+              <div class="course-content">
+                <h3>Design Fundamentals</h3>
+                <p>
+                  Master color theory, typography, composition, and visual
+                  hierarchy. Build a strong foundation in design principles
+                  applicable across all mediums.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">8 weeks</span>
+                  <span class="course-level">Beginner</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-card fade-in" style="animation-delay: 0.1s">
+              <div class="course-image">📐</div>
+              <div class="course-content">
+                <h3>Print Production Pro</h3>
+                <p>
+                  Dive deep into production workflows, color management,
+                  prepress techniques, and quality control. Learn industry
+                  standards and best practices.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">6 weeks</span>
+                  <span class="course-level">Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-card fade-in" style="animation-delay: 0.2s">
+              <div class="course-image">🖥️</div>
+              <div class="course-content">
+                <h3>Creative Suite Mastery</h3>
+                <p>
+                  Advanced training in Adobe Creative Cloud. Expert techniques
+                  in Illustrator, InDesign, and Photoshop for professional print
+                  projects.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">12 weeks</span>
+                  <span class="course-level">Advanced</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Added Installation Training subsection -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">
+            Installation Training
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="course-card fade-in">
+              <div class="course-image">📷</div>
+              <div class="course-content">
+                <h3>Camera Systems Installation</h3>
+                <p>
+                  Comprehensive training on surveillance and security camera
+                  systems. Learn installation techniques, configuration,
+                  monitoring, and troubleshooting.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">4 weeks</span>
+                  <span class="course-level">Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-card fade-in" style="animation-delay: 0.1s">
+              <div class="course-image">☀️</div>
+              <div class="course-content">
+                <h3>Solar System Installation</h3>
+                <p>
+                  Professional certification course covering solar panel
+                  installation, wiring, inverters, and system optimization for
+                  maximum energy production.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration">6 weeks</span>
+                  <span class="course-level">Intermediate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary">Browse All Courses</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added Online Registration Services Section -->
+    <section
+      id="registrations"
+      style="background: linear-gradient(to bottom, #0a0f1a, #1a1f3a)"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Online Registration Services</h2>
+        <p class="section-subtitle">
+          Streamlined digital registration platform for educational programs,
+          recruitment drives, and various formal processes.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:grid-cols-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">📝</div>
+            <h3>JAMB Registration</h3>
+            <p>
+              Secure online JAMB registration with complete form filling
+              assistance and document verification support.
+            </p>
+          </div>
+          <div class="feature-card fade-in" style="animation-delay: 0.1s">
+            <div class="feature-icon">🎓</div>
+            <h3>School Enrollment</h3>
+            <p>
+              Hassle-free school registration and admission processing for
+              students of all levels with real-time status tracking.
+            </p>
+          </div>
+          <div class="feature-card fade-in" style="animation-delay: 0.2s">
+            <div class="feature-icon">💼</div>
+            <h3>Online Recruitment</h3>
+            <p>
+              Complete recruitment management platform for job applications,
+              resume screening, and candidate tracking.
+            </p>
+          </div>
+          <div class="feature-card fade-in" style="animation-delay: 0.3s">
+            <div class="feature-icon">✅</div>
+            <h3>Custom Registration</h3>
+            <p>
+              Tailored registration solutions for events, certifications,
+              competitions, and any formal enrollment process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" style="background: #0a0f1a">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Why Choose SJM</h2>
+
+        <div class="grid md:grid-cols-2 gap-16 items-center mt-12">
+          <div>
+            <div class="space-y-8">
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 pt-1">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-500/20 border border-blue-500/40"
+                  >
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-white">
+                    Premium Quality Assurance
+                  </h3>
+                  <p class="text-blue-100/60 leading-relaxed">
+                    State-of-the-art printing technology combined with rigorous
+                    quality control ensures every piece meets our exacting
+                    standards.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 pt-1">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-500/20 border border-blue-500/40"
+                  >
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-white">
+                    Expert Consultation
+                  </h3>
+                  <p class="text-blue-100/60 leading-relaxed">
+                    Our experienced team provides personalized guidance from
+                    concept through final delivery, ensuring optimal results.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 pt-1">
+                  <div
+                    class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-500/20 border border-blue-500/40"
+                  >
+                    <span class="text-blue-400 font-bold">✓</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-white">
+                    Rapid Turnaround
+                  </h3>
+                  <p class="text-blue-100/60 leading-relaxed">
+                    Without compromising on quality, we deliver exceptional
+                    results on accelerated timelines to meet your deadlines.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-full rounded-xl overflow-hidden">
+            <div
+              class="h-96 bg-gradient-to-br from-blue-900 to-indigo-900 flex items-center justify-center relative border border-blue-500/20"
+            >
+              <div class="absolute inset-0 opacity-10 bg-pattern"></div>
+              <!-- <svg
+                class="w-40 h-40 text-blue-400 opacity-40"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.5"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg> -->
+
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/boy-removebg-preview.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section
+      id="portfolio"
+      style="background: linear-gradient(to bottom, #1a1f3a, #0f1423)"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Our Portfolio</h2>
+        <p class="section-subtitle">
+          Explore our stunning collection of print works, installations, and
+          projects. See what we've created for clients across various
+          industries.
+        </p>
+
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-tabs">
+          <button class="tab-btn active" onclick="filterGallery('all')">
+            All Works
+          </button>
+          <button class="tab-btn" onclick="filterGallery('print')">
+            Print Works
+          </button>
+          <button class="tab-btn" onclick="filterGallery('installation')">
+            Installations
+          </button>
+          <button class="tab-btn" onclick="filterGallery('video')">
+            Videos
+          </button>
+        </div>
+
+        <!-- Print Works Gallery -->
+        <div id="print" class="gallery-category-content active">
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2012.jpeg"
+                alt="Business Cards Collection"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Premium Business Cards</div>
+                <div class="gallery-category">Branding</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2016%20aloma.jpeg"
+                alt="Corporate Brochures"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Corporate Brochures</div>
+                <div class="gallery-category">Marketing</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print6.jpeg"
+                alt="Large Format Banners"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Large Format Banners</div>
+                <div class="gallery-category">Signage</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print5.jpeg"
+                alt="Product Packaging"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Custom Packaging</div>
+                <div class="gallery-category">Product Design</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print2.jpeg"
+                alt="Event Posters"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Event Posters</div>
+                <div class="gallery-category">Events</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <!-- more -->
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2013.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2011.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print7.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20nin%20banner.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20exams.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20workspace.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print3.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2015.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print%2014.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm-print1.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <!-- ends -->
+            <!-- <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="https://ik.imagekit.io/newpage/sjm/sjm%20print10.jpeg"
+                alt="Magazine Layouts"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Magazine Design</div>
+                <div class="gallery-category">Editorial</div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Installation Works Gallery -->
+        <div id="installation" class="gallery-category-content">
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Camera Installation"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Camera System Setup</div>
+                <div class="gallery-category">Security</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Solar Installation"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Solar Panel Installation</div>
+                <div class="gallery-category">Renewable Energy</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="CCTV Monitoring"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Monitoring Center</div>
+                <div class="gallery-category">Infrastructure</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Energy Storage"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Energy Storage System</div>
+                <div class="gallery-category">Technology</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Commercial Security"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Commercial Security</div>
+                <div class="gallery-category">Enterprise</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Residential Solar"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Residential Solar</div>
+                <div class="gallery-category">Homes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Gallery -->
+        <div id="video" class="gallery-category-content">
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Printing Process Showcase</div>
+                <div class="gallery-category">Tutorial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Design Studio Tour</div>
+                <div class="gallery-category">Facility</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Installation Training</div>
+                <div class="gallery-category">Education</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Client Success Story</div>
+                <div class="gallery-category">Testimonial</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Solar System Demo</div>
+                <div class="gallery-category">Product</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Course Highlights</div>
+                <div class="gallery-category">Learning</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Works Combined -->
+        <div id="all" class="gallery-category-content" style="display: none">
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Business Cards"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Business Cards</div>
+                <div class="gallery-category">Print</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Camera Setup"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-label">Camera Installation</div>
+                <div class="gallery-category">Installation</div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="expandVideo(this)">
+              <video muted playsinline>
+                <source
+                  src="https://media.w3.org/cc0-video/big_buck_bunny_720p_30mb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="gallery-overlay">
+                <div class="gallery-label">Printing Demo</div>
+                <div class="gallery-category">Video</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="max-w-4xl mx-auto px-6 cta-content">
+        <h2>Ready to Transform Your Vision?</h2>
+        <p>
+          Whether you're seeking premium printing services or looking to master
+          design expertise, PrintCraft is your ultimate partner for success.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/08157266351/?text=from%20the website: ">
+            <button class="btn btn-primary">Request Printing Quote</button></a
+          >
+          <a
+            href="https://wa.me/09018005785/?text=from%20the website: "
+            target="_blank"
+          >
+            <button
+              class="btn btn-secondary"
+              style="color: white; border-color: rgba(255, 255, 255, 0.3)"
+            >
+              Enroll Now
+            </button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid text-center md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <!-- <div
+                class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center rounded-lg"
+              >
+                <span class="text-white font-bold text-sm">SJM</span>
+              </div>
+              <span class="font-bold text-white tracking-tight"
+                >UNIQUE TECH.</span
+              > -->
+              <img class="w-56 mx-auto" src="SJM OMG.svg" alt="" srcset="" />
+            </div>
+            <p style="font-size: 0.85rem; opacity: 0.7">
+              Premium printing and design education for creative professionals.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <ul class="space-y-2">
+              <li><a href="#services">Business Cards</a></li>
+              <li><a href="#services">Marketing Materials</a></li>
+              <li><a href="#services">Large Format</a></li>
+              <li><a href="#services">Custom Printing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Learning</h4>
+            <ul class="space-y-2">
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#">Certifications</a></li>
+              <li><a href="#">Workshops</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul class="space-y-2" style="font-size: 0.9rem">
+              <li>
+                <a href="mailto:hello@printcraft.com"
+                  >hello@sjmuniquetech.com</a
+                >
+              </li>
+              <li><a href="tel:+1234567890">(805) 352-2500</a></li>
+              <li>Follow us online</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.6;
+          "
+        >
+          <p>
+            © 2025 SJM Unique Technology. All rights reserved. | Elevating
+            Print, Design, Solar and Camera Installations & Programming
+            Excellence
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
