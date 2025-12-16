@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
@@ -12,10 +13,7 @@ body {
   background-color: #0f1423;
   color: #e5e7eb;
   overflow-x: hidden;
-  border: solid 2px red;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  /* border: solid 2px red; */
 }
 
 h1,
